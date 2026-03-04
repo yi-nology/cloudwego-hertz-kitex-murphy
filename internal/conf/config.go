@@ -94,7 +94,7 @@ func Init(configPath string) error {
 
 func InitWithDefault() error {
 	viper.SetDefault("server.host", "0.0.0.0")
-	viper.SetDefault("server.port", {{.server_port}})
+	viper.SetDefault("server.port", 8888)
 	viper.SetDefault("server.mode", "debug")
 	viper.SetDefault("server.read_timeout", 30)
 	viper.SetDefault("server.write_timeout", 30)
@@ -110,7 +110,7 @@ func InitWithDefault() error {
 	viper.SetDefault("log.max_backups", 10)
 	viper.SetDefault("log.max_age", 30)
 	viper.SetDefault("log.compress", true)
-	viper.SetDefault("app.name", "{{.project_name}}")
+	viper.SetDefault("app.name", "template")
 	viper.SetDefault("app.version", "1.0.0")
 
 	GlobalConfig = &Config{}

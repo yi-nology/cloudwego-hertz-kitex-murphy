@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/cloudwego/hertz/pkg/app"
-	"{{.module_name}}/pkg/logger"
 	"go.uber.org/zap"
+	log "{{.module_name}}/internal/pkg/logger"
 )
 
 func Logger() app.HandlerFunc {
@@ -20,7 +20,7 @@ func Logger() app.HandlerFunc {
 			status := c.Response.StatusCode()
 			clientIP := c.ClientIP()
 
-			logger.Info("HTTP Request",
+			log.Info("HTTP Request",
 				zap.Int("status", status),
 				zap.String("method", method),
 				zap.String("path", path),
